@@ -49,22 +49,25 @@ Import data example to Elasticsearch:
 ## Setting up Loopback
 Install StrongLoop command line interface:
 
-    npm install -g strong-cli
+    npm install -g strongloop
+
 Create project:
 
     slc loopback:loopback
     set project path and name
+
+Install connector from github:
+
+    npm install git@github.com:digitalscientists/loopback-connector-elastic-search.git --save
+
 Attach datasource (see **/server/datasources.json**):
 
     slc loopback:datasource test-elastic
     select loopback-connector-elastic
+
 Create model (see **/examples/entry.json**):
 
     slc loopback:model entry
-
-## Install connector from NPM
-
-    npm install loopback-connector-elastic-search --save
 
 ## Configuring elastic connector
 Edit **datasources.json** and set:
@@ -94,6 +97,32 @@ Optional:
 - **DefaultSize:** Rows to return per page.
 - **Index:** Search engine specific index.
 - **Type:** Search engine specific type.
+
+## Model definition options
+Allows ES type to be set individually for a model via `options -> elastic-search` in *common/models/MODEL-NAME.json*:
+
+    {
+        "name": "view",
+        "plural": "views",
+        "base": "PersistedModel",
+        "options": {
+            "elastic-search": {
+                "type": "genius_views"
+            }
+        }
+        "properties": {
+            "_id": {
+                "type": "string"
+            },
+            "created_at": {
+                "type": "date"
+            },
+        },
+        "validations": [],
+        "relations": {},
+        "acls": [],
+        "methods": {}
+    }
 
 ## Run example
 Goto to _examples_ folder and run:
