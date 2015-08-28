@@ -143,4 +143,7 @@ To test a specific filter in GET method, use for example:
 
 ## Release notes
 
-  * First beta version
+  * To use a release candidate in your project:
+    ```bash
+    npm install https://github.com/digitalscientists/loopback-connector-elastic-search/archive/v0.0.2a.ds.01.tar.gz --save
+    ```
