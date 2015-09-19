@@ -1,6 +1,6 @@
 {
   "name": "loopback-connector-elastic-search",
-  "version": "0.0.2a.ds.05",
+  "version": "0.0.2a.ds.06",
   "description": "Connect LoopBack to Elasticsearch engine",
   "main": "index.js",
   "scripts": {
